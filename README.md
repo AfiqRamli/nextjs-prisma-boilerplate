@@ -20,12 +20,6 @@ Don't spend next 3 months making architectural decisions, choosing libraries, se
 
 - **[https://nextjs-prisma-boilerplate.amd1.localhost3002.live](https://nextjs-prisma-boilerplate.amd1.localhost3002.live/)**
 
-#### Gitpod development playground:
-
-> You need Gitpod account, and maybe Postgres database url if my demo database is vandalized. You can create one on [elephantsql.com](elephantsql.com), see [Gitpod Environment](#gitpod-environment) section for details.
-
-- **[Gitpod Workspace Snapshot](https://gitpod.io#snapshot/e338d5fe-1233-48b6-aa92-59a899bc40f4)**
-
 ## Screenshots
 
 #### Desktop:
@@ -111,7 +105,7 @@ React `18.2.0`, Next.js `12.2.0`, Node.js `16.13.1`, Prisma `4`, Postgres `14.3`
 
 #### Development:
 
-- 3 available configured development environments: local, Docker (VS Code devcontainers) and Gitpod
+- 3 available configured development environments: local, Docker (VS Code devcontainers)
 - included VS Code settings and extensions for syntax highlighting, intellisense, formatting, linting and running tests
 - configured development database with Postgres and Adminer Docker containers
 
@@ -151,11 +145,10 @@ This project has 3 available development environments:
 
 1. local
 2. Docker (with and without devcontainers)
-3. Gitpod
 
 You can pick whatever environment you prefer.
 
-> **Which one to choose?** If you like conventional approach pick local, if you work in a team and want to have consistent environments with colleagues to easily reproduce bugs and quickly onboard new members pick Docker, and if you want to make sandbox do reproduce a bug and ask for help publicly pick Gitpod.
+> **Which one to choose?** If you like conventional approach pick local, if you work in a team and want to have consistent environments with colleagues to easily reproduce bugs and quickly onboard new members pick Docker
 
 #### 1. local environment
 
@@ -295,47 +288,6 @@ git config --list --show-origin
 
 > I suggest you install [Portainer Community Edition](https://www.portainer.io/pricing-new) container locally for easier managing and debugging containers, it's free and very useful tool.
 
-#### Gitpod environment
-
-Go to [elephantsql.com](https://elephantsql.com) create free account and create free 20MB Postgres database. Go to [gitpod.io](https://gitpod.io/), login with Github. Open your forked repository in Gitpod by opening following link (replace `your-username` with real one):
-
-```
-https://gitpod.io/#https://github.com/your-username/nextjs-prisma-boilerplate
-```
-
-Gitpod environment will read variables from `envs/development-gitpod` folder. Create local env file from example file.
-
-```bash
-# terminal on Gitpod
-cp envs/development-gitpod/.env.development.gitpod.local.example envs/development-gitpod/.env.development.gitpod.local
-```
-
-In that local file set the database url from `elephantsql.com`. Other variables are set automatically.
-
-```bash
-# envs/development-gitpod/.env.development.gitpod.local
-DATABASE_URL=postgres://something:something@tyke.db.elephantsql.com/something
-```
-
-Now migrate and seed the database.
-
-> Note: `elephantsql.com` database doesn't have all privileges so you must use `prisma push` command instead of usual `prisma migrate dev`. Read more details about shadow database in [docs/demo-environments.md](docs/demo-environments.md).
-
-```bash
-# terminal on Gitpod
-
-# migrate db
-yarn gitpod:push:env
-
-# seed db
-yarn gitpod:seed:env
-```
-
-Everything is set up, you can now run the app in dev mode and open it in new browser tab.
-
-```bash
-yarn gitpod:dev:env
-```
 
 ## Running tests
 
@@ -665,8 +617,6 @@ Here is the brief overview of what you can find in it:
 - [Github Actions](docs/github-actions.md) - building Docker container, running tests, handling environment variables, handling `NODE_ENV` and `APP_ENV` variables, VPS deployment using SSH action
 - [Traefik](docs/traefik.md) - setting up live production environment based on Docker, renewing Let's Encrypt certificate
 - [VS Code](docs/vs-code.md) - ESLint and Prettier setup, running Jest tests, devcontainers setup
-- [demo environments](docs/demo-environments.md) - docs about running this app on `gitpod.io`, `repl.it`, `codesandbox.io` and `stackblitz.com`, in `envs` and `notes/envs` folder you have configuration for all these environments but only Gitpod has enough computing power to actually run it
-- [todo](docs/todo.md) - my simple personal task tracker
 
 ## Contributing
 

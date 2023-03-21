@@ -90,7 +90,7 @@ jobs:
 - use NODE_ENV and APP_ENV in combination
 
 ```bash
-# local, docker, ci, gitpod, replit
+# local, docker, ci
 # public var
 APP_ENV=
 

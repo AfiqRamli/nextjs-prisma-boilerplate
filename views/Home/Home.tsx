@@ -50,7 +50,7 @@ const Home: FC = () => {
 
   return (
     <div className={b()}>
-      <h1 className={b('title')}>Home</h1>
+      <h1 className={b('title')}>Homerrr</h1>
 
       <div className={b('pagination-search')}>
         <Pagination

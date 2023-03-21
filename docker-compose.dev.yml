@@ -17,7 +17,8 @@ services:
       - ./envs/development-docker/.env.development.docker
       - ./envs/development-docker/.env.development.docker.local
     depends_on:
-      - npb-db-dev
+      npb-db-dev:
+        condition: service_healthy
     networks:
       - internal-dev
 
@@ -35,6 +36,15 @@ services:
       - PGDATA=/var/lib/postgresql/data/data-dev
     env_file:
       - ./envs/development-docker/.env.development.docker.local
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - internal-dev
       - external-host
@@ -54,8 +64,8 @@ volumes:
   npb-app-dev-node_modules:
   npb-app-dev-next:
 
+
 networks:
   internal-dev:
     external: false
   external-host:
-    external: true
