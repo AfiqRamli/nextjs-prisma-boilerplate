@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nemanjam/nextjs-prisma-boilerplate"
+    "url": "https://github.com/AfiqRamli/nextjs-prisma-boilerplate"
   },
-  "homepage": "https://github.com/nemanjam/nextjs-prisma-boilerplate",
+  "homepage": "https://github.com/AfiqRamli/nextjs-prisma-boilerplate",
   "scripts": {
     "dev": "NODE_ENV=development nodemon",
     "build": "next build && tsc --project tsconfig.server.json",

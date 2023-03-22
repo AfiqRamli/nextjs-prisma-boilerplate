@@ -18,11 +18,10 @@ const Footer: FC = () => {
     <footer className={b()}>
       <span className={b('left-empty')} />
       <div className={b('links')}>
-        <span className={b('author')}>@nemanjam 2022</span>
+        <span className={b('author')}>@Afiq Ramli 2023</span>
         <iframe
-          src={`https://ghbtns.com/github-btn.html?user=nemanjam&repo=nextjs-prisma-boilerplate&type=star&count=true${
-            isIframeSmall ? '' : '&size=large'
-          }`}
+          src={`https://ghbtns.com/github-btn.html?user=nemanjam&repo=nextjs-prisma-boilerplate&type=star&count=true${isIframeSmall ? '' : '&size=large'
+            }`}
           frameBorder="0"
           scrolling="0"
           width={isIframeSmall ? '90' : '170'}
