@@ -10,15 +10,11 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     // "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:jest/recommended",
-    "plugin:jest/style",
-    "plugin:testing-library/react",
     "prettier"
   ],
   "env": {
     "es6": true,
     "browser": true,
-    "jest": true,
     "node": true
   },
   "settings": {
@@ -40,9 +36,6 @@
     "@typescript-eslint/no-use-before-define": 0,
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-empty-interface": "off",
-    "no-console": "warn",
-    // tests
-    "testing-library/no-node-access": "warn",
-    "testing-library/no-unnecessary-act": "warn"
+    "no-console": "warn"
   }
 }
